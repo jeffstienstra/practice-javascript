@@ -208,26 +208,14 @@
 // write a JS program to replace every character in a given string with the character
 // following it in the alphabet
 
-const moveCharsForward = (str) =>
-  str
-    .split("")
-    .map((char) => String.fromCharCode(char.charCodeAt(0) + 1))
-    .join("")
-    .replace(/{/g, "a");
+// const moveCharsForward = (str) =>
+//   str
+//     .split("")
+//     .map((char) => String.fromCharCode(char.charCodeAt(0) + 1))
+//     .join("")
+//     .replace(/{/g, "a");
 
-console.log(moveCharsForward("jazz"));
-
-// let i;
-// for (i = 0; i < moveCharsForward.length; i++) {
-//   console.log(moveCharsForward[i]);
-//   if (moveCharsForward[i] === "{") {
-//     moveCharsForward.splice(moveCharsForward[i], 1, "a");
-//     console.log("found a {");
-//   }
-//   console.log(moveCharsForward);
-// }
-
-// console.log(moveCharsForward);
+// console.log(moveCharsForward("jazz"));
 
 //==============================================================
 // const numbers = ["{", 1, 2, 3, 4];
@@ -242,3 +230,55 @@ console.log(moveCharsForward("jazz"));
 //   }
 //   console.log(numbers);
 // }
+
+//==============================================================
+
+// Write a function that accepts an array of numbers and returns the product of all the numbers.
+
+// Input: [1, 2, 3, 4]
+// Output: 24
+
+// Explanation: (1 x 2 x 3 x 4) = 24
+
+// const numbers = [1, 2, 3, 4];
+// let product = 1;
+
+// numbers.map((num) => (product = product * num));
+
+// console.log("product = ", product);
+
+//==============================================================
+// Given an array, write a function that returns an array that contains the original array’s values in reverse.
+
+// Input: [1, 2, 3, 4, 5]
+// Output: [5, 4, 3, 2, 1]
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// console.log(numbers.reverse());
+
+//==============================================================
+// Given an array of numbers, write a function that returns a new array in which only select numbers from the original array are included, based on the following details:
+
+// The new array should always start with the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right. This number gets added to the new array. If this next number happens to be a 4, then the next number after that is the one four spaces to the right. And so on and so forth until the end of the array is reached.
+
+// Input:
+// [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+
+// Output:
+// [2, 3, 1, 2, 2, 1, 5, 2, 2]
+
+const numbers = [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+let newArray = []
+
+function selectedNumbers(array)
+  newArray.push(array[0])
+  
+  for (let i = array[0]; i < numbers.length;) {
+
+    if (array[i] < array.length){
+      newArray.push(array[i])
+    }else{
+      return console.log("i = " + i + " and array.length = " + array.length);
+    }
+  }
