@@ -258,27 +258,27 @@
 // console.log(numbers.reverse());
 
 //==============================================================
-// Given an array of numbers, write a function that returns a new array in which only select numbers from the original array are included, based on the following details:
+// Write a JS program to get the current data.
+// Expected output:
+// mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
 
-// The new array should always start with the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right. This number gets added to the new array. If this next number happens to be a 4, then the next number after that is the one four spaces to the right. And so on and so forth until the end of the array is reached.
+var today = new Date();
+var dd = today.getDate();
 
-// Input:
-// [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+var mm = today.getMonth() + 1;
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = "0" + dd;
+}
 
-// Output:
-// [2, 3, 1, 2, 2, 1, 5, 2, 2]
-
-const numbers = [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
-let newArray = []
-
-function selectedNumbers(array)
-  newArray.push(array[0])
-  
-  for (let i = array[0]; i < numbers.length;) {
-
-    if (array[i] < array.length){
-      newArray.push(array[i])
-    }else{
-      return console.log("i = " + i + " and array.length = " + array.length);
-    }
-  }
+if (mm < 10) {
+  mm = "0" + mm;
+}
+today = mm + "-" + dd + "-" + yyyy;
+console.log(today);
+today = mm + "/" + dd + "/" + yyyy;
+console.log(today);
+today = dd + "-" + mm + "-" + yyyy;
+console.log(today);
+today = dd + "/" + mm + "/" + yyyy;
+console.log(today);
