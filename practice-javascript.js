@@ -262,23 +262,33 @@
 // Expected output:
 // mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
 
-var today = new Date();
-var dd = today.getDate();
+// var today = new Date();
+// var dd = today.getDate();
 
-var mm = today.getMonth() + 1;
-var yyyy = today.getFullYear();
-if (dd < 10) {
-  dd = "0" + dd;
-}
+// var mm = today.getMonth() + 1;
+// var yyyy = today.getFullYear();
+// if (dd < 10) {
+//   dd = "0" + dd;
+// }
 
-if (mm < 10) {
-  mm = "0" + mm;
-}
-today = mm + "-" + dd + "-" + yyyy;
-console.log(today);
-today = mm + "/" + dd + "/" + yyyy;
-console.log(today);
-today = dd + "-" + mm + "-" + yyyy;
-console.log(today);
-today = dd + "/" + mm + "/" + yyyy;
-console.log(today);
+// if (mm < 10) {
+//   mm = "0" + mm;
+// }
+// today = mm + "-" + dd + "-" + yyyy;
+// console.log(today);
+// today = mm + "/" + dd + "/" + yyyy;
+// console.log(today);
+// today = dd + "-" + mm + "-" + yyyy;
+// console.log(today);
+// today = dd + "/" + mm + "/" + yyyy;
+// console.log(today);
+// \/ THE ABOVE CODE CAN BE SIMPLIFIED LIKE THIS \/
+
+const formatDate = (date = new Date()) => {
+  const days = date.getDate() + 1;
+  const months = date.getMonth() + 1;
+  const years = date.getFullYear();
+  return `${months}-${days}-${years}`;
+};
+
+console.log(formatDate());
