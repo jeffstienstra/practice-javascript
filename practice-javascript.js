@@ -284,11 +284,31 @@
 // console.log(today);
 // \/ THE ABOVE CODE CAN BE SIMPLIFIED LIKE THIS \/
 
-const formatDate = (date = new Date()) => {
-  const days = date.getDate() + 1;
-  const months = date.getMonth() + 1;
-  const years = date.getFullYear();
-  return `${months}-${days}-${years}`;
-};
+// const formatDate = (date = new Date()) => {
+//   const days = date.getDate() + 1;
+//   const months = date.getMonth() + 1;
+//   const years = date.getFullYear();
+//   return `${months}-${days}-${years}`;
+// };
 
-console.log(formatDate());
+// console.log(formatDate());
+
+//==============================================================
+// Write a JS program to create a new string adding "New!" in front of a given string.
+// If the given string begins with "New!" already then return the original string.
+
+// const string = "New! Stuff on Sale!";
+
+// const appendNew = (string) => {
+//   if (string.split(" ")[0] == "New!") {
+//     return string;
+//   } else {
+//     let newString = `New! ${string}`;
+//     return newString;
+//   }
+// };
+// console.log(appendNew(string));
+// \/ THE ABOVE CODE CAN BE SIMPLIFIED LIKE THIS \/
+const addNew = (str) => (str.indexOf("New!") === 0 ? str : `New! ${str}`);
+
+console.log(addNew("Stuff on Sale!"));
