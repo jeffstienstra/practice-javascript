@@ -135,15 +135,15 @@
 // const totalHeight = characters.reduce((acc, cur) => acc + cur.height, 0);
 // console.log(totalHeight);
 // //3. Get total number of characters by eye color
-// const charactersByEyeColor = characters.reduce((acc, cur) => {
-//   const color = cur.eye_color;
-//   if (acc[color]) {
-//     acc[color]++;
-//   } else {
-//     acc[color] = 1;
-//   }
-//   return acc;
-// }, {});
+const charactersByEyeColor = characters.reduce((acc, cur) => {
+  const color = cur.eye_color;
+  if (acc[color]) {
+    acc[color]++;
+  } else {
+    acc[color] = 1;
+  }
+  return acc;
+}, {});
 // console.log(charactersByEyeColor);
 // //4. Get total number of characters in all the character names
 // const totalLetters = characters.reduce((acc, cur) => acc + cur.name.length, 0);
