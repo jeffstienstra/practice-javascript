@@ -45,6 +45,9 @@ const merged = editedUniformPieces.reduce((accum, obj) => {
 
 console.log("Step 2: merge objects into single key/value pair for each company with array of items", merged);
 console.log(merged["AstroCorp"]);
+
+// ===== COMING BACK TO THIS LATER =====
+
 // check to see if each company has all required items ready
 // for (i = 0; i < merged.length; i++) {
 //   if (merged[i].shirt && merged[i].pant && merged[i].shoe && merged[i].belt) {
