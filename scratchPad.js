@@ -24,7 +24,7 @@ var uniformPieces = [
 
 const editedUniformPieces = [];
 
-// create key/value objects using company name and item
+// create individual key/value objects using company name and item
 uniformPieces.map((uniformPiece) => {
   const name = uniformPiece.split("_")[0];
   const piece = uniformPiece.split("_")[1];
@@ -34,7 +34,8 @@ uniformPieces.map((uniformPiece) => {
   editedUniformPieces.push(order);
 });
 
-// combine array of hashed so each company appears once with an array of items
+console.log("Step 1: create array of individual objects", editedUniformPieces);
+// combine array of hashes so each company appears once with an array of items
 const merged = editedUniformPieces.reduce((accum, obj) => {
   for (key in obj) {
     accum[key] = accum[key] ? [...accum[key], obj[key]] : obj[key];
@@ -42,13 +43,13 @@ const merged = editedUniformPieces.reduce((accum, obj) => {
   return accum;
 }, {});
 
+console.log("Step 2: merge objects into single key/value pair for each company with array of items", merged);
+console.log(merged["AstroCorp"]);
 // check to see if each company has all required items ready
-for (i = 0; i < merged.length; i++) {
-  if (merged[i].shirt && merged[i].pant && merged[i].shoe && merged[i].belt) {
-    console.log(`customer ${merged[i.key]}'s order is ready.`);
-  } else {
-    console.log("no orders are ready");
-  }
-}
-
-console.log(merged);
+// for (i = 0; i < merged.length; i++) {
+//   if (merged[i].shirt && merged[i].pant && merged[i].shoe && merged[i].belt) {
+//     console.log(`customer ${merged[i.key]}'s order is ready.`);
+//   } else {
+//     console.log("no orders are ready");
+//   }
+// }
