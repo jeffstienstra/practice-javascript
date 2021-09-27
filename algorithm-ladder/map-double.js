@@ -14,4 +14,5 @@ let doubler = (array) => {
   });
   return doubledNumbers;
 };
+
 console.log(doubler(numbers));
